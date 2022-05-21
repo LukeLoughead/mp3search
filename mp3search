@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+#file: mp3search
+
+# Author: Luke Andrew Loughead
+# License: GPLv3
+# Date: 2022-05-21
+# Website: https://github.com/LukeLoughead
+
+# Searches Google using Firefox for mp3 (or wma or ogg) directories with the string given in arguments (use quotes).
+
+$X=$ARGV[0];
+$X=~ s/\s/+/g;
+
+system "firefox -new-tab "."\"http://www.google.ca/search?hl=en&q=-inurl%3A%28htm%7Chtml%7Cphp%29+intitle%3A%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28mp3%7Cogg%29+%22".$X."%22+&btnG=Google+Search&meta=\" &"
